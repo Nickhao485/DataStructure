@@ -1,3 +1,5 @@
+import java.util.Iterator;
+
 public class Stack<Item> {
     private Node first;
     private int N;
@@ -23,5 +25,31 @@ public class Stack<Item> {
         first = first.next;
         --N;
         return item;
+    }
+    public Iterator<Item> iterator() {
+        return new ReverseArrayIterator();
+    }
+
+    class ReverseArrayIterator implements Iterator<Item> {
+        private int i = N;
+
+        public boolean hasNext() {
+            return i > 0;
+        }
+
+        public Item next() {
+            --i;
+            return first.next.item;
+        }
+    }
+
+    public void showStack() {
+        Node copyFirst = new Node();
+        copyFirst.item = first.item;
+        copyFirst.next = first.next;
+        while (copyFirst != null) {
+            System.out.print(copyFirst.item);
+            copyFirst = copyFirst.next;
+        }
     }
 }
