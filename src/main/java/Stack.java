@@ -43,13 +43,8 @@ public class Stack<Item> {
         }
     }
 
-    public void showStack() {
-        Node copyFirst = new Node();
-        copyFirst.item = first.item;
-        copyFirst.next = first.next;
-        while (copyFirst != null) {
-            System.out.print(copyFirst.item);
-            copyFirst = copyFirst.next;
-        }
+    public static void copy(Stack<String> stack) {
+        Stack<String> newStack = new Stack<>();
+
     }
 }

@@ -38,7 +38,28 @@ public class Queue<Item> {
         return firstItem;
     }
 
-    public void showQueue() {
+    public Boolean find(Item key) {
+        int i = N;
+        for (int j = 0; j < i; j++) {
+            Item item = first.item;
+            if (!first.item.equals(key)) {
+                first = first.next;
+            } else {
+                System.out.println(j);
+                return true;
+            }
+        }
+        return false;
+    }
 
+    public void reverse() {
+        Node middle = null;
+
+        while (first != null) {
+            Node second = first.next;
+            first.next = middle;
+            middle = first;
+            first = second;
+        }
     }
 }
