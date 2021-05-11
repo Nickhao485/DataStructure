@@ -4,8 +4,24 @@ public class Stack<Item> {
     private Node first;
     private int N;
     class Node {
-        Item item;
-        Node next;
+        private Item item;
+        private Node next;
+
+        Node() {
+        }
+
+        Node(Node x) {
+            item = x.item;
+            if (first != null) {
+                next = new Node(x.next);
+            }
+        }
+    }
+    Stack() {
+
+    }
+    Stack(Stack<Item> s) {
+        first = new Node(s.first);
     }
     public boolean isEmpty() {
         return first == null;
@@ -26,10 +42,10 @@ public class Stack<Item> {
         --N;
         return item;
     }
+
     public Iterator<Item> iterator() {
         return new ReverseArrayIterator();
     }
-
     class ReverseArrayIterator implements Iterator<Item> {
         private int i = N;
 
