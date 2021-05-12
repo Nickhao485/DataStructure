@@ -2,7 +2,7 @@ package p2_1;
 
 public class Insertion {
     public static void main(String[] args) {
- 2,3,1,8,5,4
+
     }
 
     public static void sort(Comparable[] a) {
