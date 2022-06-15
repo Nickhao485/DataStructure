@@ -2,7 +2,7 @@ package p2_1;
 
 public class SortCompare {
     public static double time(String alg, Double[] a) {
-
+        return 1.1;
     }
 
     public static double timeRandomInput(String alg, int N, int T) {
@@ -13,5 +13,6 @@ public class SortCompare {
 //                a[i] = StdRandom.uniform()
             }
         }
+        return 1.1;
     }
 }
